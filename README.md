@@ -1,5 +1,5 @@
 # News app
-
+Project made by Parth Chopra
 A new Flutter application.
 
 ## Getting Started

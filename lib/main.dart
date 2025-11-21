@@ -1,8 +1,10 @@
+import 'package:flutter/widgets.dart';
+
 import 'Newsbloc.dart';
 import 'newsmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:demo1/Webview.dart';
-//import 'Newsbloc.dart';
+import 'Newsbloc.dart';
 
 void main() {
   runApp(MyHomePage());
@@ -14,7 +16,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Widget titleapp = Text("News App");
+  Widget titleapp = Text("NCU News App");
   //Categorynews cn = Categorynews();
 
   Icon actionicon = Icon(Icons.search);
@@ -170,7 +172,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           .title
                           .toLowerCase()
                           .contains(a.toLowerCase()))
-                        //   filternews = article;
+                          filternews = article;
 
                         return InkWell(
                           onTap: () {
@@ -221,9 +223,11 @@ class _MyHomePageState extends State<MyHomePage> {
                             ]),
                           ),
                         );
+                   ;
                     } else {
-//if(issearch)
-                      //filternews= article;
+
+if(issearch)
+                      filternews= article;
 
                       return InkWell(
                         onTap: () {
@@ -273,10 +277,28 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                         ),
                       );
+
+
                     }
                   });
             } else
-              return Center(child: CircularProgressIndicator());
+              return Center(child:
+              Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(height: 100),
+                  CircularProgressIndicator(),
+                  Text(
+                   "News app using flutter",
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold)
+
+                  ),
+                ],
+              ),
+              );
+              //CircularProgressIndicator());
           },
         ),
       ),
